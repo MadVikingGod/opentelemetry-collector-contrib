@@ -227,6 +227,7 @@ connectors:
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/connector/grafanacloudconnector v0.104.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/connector/roundrobinconnector v0.104.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/connector/routingconnector v0.104.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/connector/sccconnector v0.104.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/connector/servicegraphconnector v0.104.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/connector/spanmetricsconnector v0.104.0
 
@@ -486,3 +487,4 @@ replaces:
   - github.com/open-telemetry/opentelemetry-collector-contrib/exporter/otelarrowexporter => ../../exporter/otelarrowexporter
   - github.com/open-telemetry/opentelemetry-collector-contrib/receiver/otelarrowreceiver => ../../receiver/otelarrowreceiver
   - github.com/open-telemetry/opentelemetry-collector-contrib/exporter/rabbitmqexporter => ../../exporter/rabbitmqexporter
+  - github.com/open-telemetry/opentelemetry-collector-contrib/connector/sccconnector => ../../connector/sccconnector

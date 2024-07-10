@@ -1,0 +1,44 @@
+scc:
+scc/full:
+  trace:
+  - semantic_version: "https://opentelemetry.io/schemas/1.26.0" # optional, default is "https://opentelemetry.io/schemas/1.24.0"
+    # one of match or match_attributes must be present. If both are present, they must both match.
+    match: http.server.* # regex for trace name
+    match_attributes: 
+      - name: server.address # matches attribute name and value
+        value: localhost
+      - name: http.request.method # matches attribute is present\
+     
+    groups: # semantic convention groups to match
+    - trace.http.server
+    ignore: # attribute names that will not appear in missing or extra attributes in output.
+    - error.type 
+    include: # additional attributes that should be checked for.
+    - project.id
+
+    # report if any attributes are present that are not in the groups + induce.
+    report_additional: true 
+  metrics:
+  - semantic_version: "https://opentelemetry.io/schemas/1.25.0"
+    match: http.server.request.duration # regex for metric name
+    match_attributes:
+    - name: http.request.method
+    groups: 
+    - metric_attributes.http.server
+    ignore: 
+    - ignored.attribute
+    include: 
+    - additional.attribute
+    report_additional: true
+  log:
+  - semantic_version: "https://opentelemetry.io/schemas/1.24.0"
+    match: ".*exception.*" # regex for log message
+    match_attributes:
+    groups: 
+    - log-exception
+    ignore: 
+    - exception.stacktrace
+    include: 
+    - environment
+    report_additional: true
+  report_unmatched: true
