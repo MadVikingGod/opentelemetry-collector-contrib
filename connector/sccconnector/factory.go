@@ -166,7 +166,7 @@ func putAttributes(resp match.Response, dst pcommon.Map) {
 	if resp.ResourceSchema != "" {
 		dst.PutStr("resource.Schema", resp.ResourceSchema)
 	}
-	if resp.ServiceName != "" {
+	if resp.ServiceName == "" {
 		resp.ServiceName = "_NONE"
 	}
 	dst.PutStr("service.name", resp.ServiceName)

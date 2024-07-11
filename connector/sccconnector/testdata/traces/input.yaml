@@ -4,6 +4,9 @@ resourceSpans:
     - key: "environment"
       value: 
         stringValue: "dev"
+    - key: "service.name"
+      value: 
+        stringValue: "trace_test"
   scopeSpans:
   - scope: {}
     spans:
@@ -47,3 +50,16 @@ resourceSpans:
       - key: "peer.service"
         value: 
           stringValue: "trace_test"
+- resource:
+    schema_url: https://opentelemetry.io/schemas/1.26.0
+  scopeSpans:
+  - scope: 
+      name: "scope"
+      version: "1.0"
+    schema_url: https://opentelemetry.io/schemas/1.26.0
+    spans:
+    - name: "test_additional"
+      attributes:
+      - key: "server.address"
+        value: 
+          stringValue: "localhost"

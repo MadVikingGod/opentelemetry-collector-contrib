@@ -8,9 +8,65 @@ resourceLogs:
   - scope: 
       name: otelcol/sccconnector
       version: v0.0.1
-      url: https://opentelemetry.io/schemas/1.26.0
+    schema_url: https://opentelemetry.io/schemas/1.26.0
     logRecords:
     - body:
-        stringValue: "testResource"
+        stringValue: "matched"
+      attributes:
+      - key: "missing_attributes"
+        value:
+          arrayValue:
+            values:
+            - stringValue: "extra"
+      - key: "name"
+        value:
+          stringValue: "match_extra"
+      - key: "type"
+        value:
+          stringValue: "Trace"
+      - key: "service.name"
+        value:
+          stringValue: "trace_test"
     - body:
-        stringValue: "testResource"
+        stringValue: "matched"
+      attributes:
+      - key: "missing_attributes"
+        value:
+          arrayValue:
+            values:
+            - stringValue: "server.address"
+      - key: "name"
+        value:
+          stringValue: "match_no_address"
+      - key: "type"
+        value:
+          stringValue: "Trace"
+      - key: "service.name"
+        value:
+          stringValue: "trace_test"
+    - body:
+        stringValue: "matched"
+      attributes:
+      - key: "extra_attributes"
+        value:
+          arrayValue:
+            values:
+            - stringValue: "server.address"
+      - key: "name"
+        value:
+          stringValue: "test_additional"
+      - key: "scope.name"
+        value:
+          stringValue: "scope"
+      - key: "scope.version"
+        value:
+          stringValue: "1.0"
+      - key: "type"
+        value:
+          stringValue: "Trace"
+      - key: "service.name"
+        value:
+          stringValue: "_NONE"
+      - key: "scope.schema_url"
+        value:
+          stringValue: "https://opentelemetry.io/schemas/1.26.0"
