@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-package sccconnector
+package sccconnector // import "github.com/open-telemetry/opentelemetry-collector-contrib/connector/sccconnector"
 
 import (
 	"errors"

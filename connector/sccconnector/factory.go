@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-package sccconnector
-
-//go:generate mdatagen metadata.yaml
+package sccconnector // import "github.com/open-telemetry/opentelemetry-collector-contrib/connector/sccconnector"
 
 import (
 	"context"
